@@ -1,0 +1,106 @@
+# 多仓库代码效率评估系统配置
+
+# OpenAI/OpenRouter配置
+openai:
+  model: "gpt-4"
+  max_retries: 6
+  base_delay: 2.0
+  request_interval: 3.0
+
+# OpenRouter配置（可选）
+openrouter:
+  enabled: false  # 设置为true以使用OpenRouter
+  model: "openai/gpt-4.1-mini"  # OpenRouter支持的模型
+  base_url: "https://openrouter.ai/api/v1"
+
+# Git配置
+git:
+  max_commits: 1000
+  since_days: 30
+  exclude_merge_commits: true
+  exclude_empty_commits: true
+
+# 评估指标权重
+metrics:
+  code_quality: 0.3
+  productivity: 0.25
+  collaboration: 0.2
+  innovation: 0.15
+  maintenance: 0.1
+
+# 代码质量评估标准
+code_quality_thresholds:
+  excellent: 0.9
+  good: 0.7
+  medium: 0.5
+  poor: 0.3
+
+# 生产力评估标准
+productivity_thresholds:
+  high: 20  # 每月提交数
+  medium: 10
+  low: 5
+
+# 数据库配置
+database:
+  type: "sqlite"
+  path: "data/efficiency_analysis.db"
+
+# 输出配置
+output:
+  base_dir: "analysis_results"
+  formats: ["json", "html", "pdf"]
+  charts: true
+  reports: true
+
+# 仓库配置
+repositories:
+  - name: "goplus_web"
+    path: "./goplus_web"
+    weight: 1.0
+    description: "GoPlus Web前端项目"
+  
+  - name: "go-scan-checkers"
+    path: "./go-scan-checkers"
+    weight: 0.8
+    description: "Go扫描检查器项目"
+
+  - name: "go-scan"
+    path: "./go-scan"
+    weight: 0.8
+    description: "Goscan"
+
+# 员工映射配置
+employee_mapping:
+  "韩杰": ["2590259024@qq.com"]
+  "qingmu213": ["qingmu213@gmail.com"]
+  "yingke": ["yingke@gopluslabs.io"]
+  "gaopengfei200712": ["gaopengfei200712@gmail.com"]
+  "jeff-hall": ["jeff-hall@foxmail.com"]
+
+# 评估周期
+evaluation_periods:
+  - name: "weekly"
+    days: 7
+    description: "周度评估"
+  
+  - name: "monthly"
+    days: 30
+    description: "月度评估"
+  
+  - name: "quarterly"
+    days: 90
+    description: "季度评估"
+
+# 报告模板
+report_templates:
+  summary: "templates/summary_report.html"
+  detailed: "templates/detailed_report.html"
+  employee: "templates/employee_report.html"
+
+# 日志配置
+logging:
+  level: "INFO"
+  file: "logs/efficiency_analysis.log"
+  max_size: "10MB"
+  backup_count: 5 

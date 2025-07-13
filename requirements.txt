@@ -1,0 +1,46 @@
+# Core dependencies
+openai>=1.14.3
+gitpython>=3.1.41
+python-dotenv>=1.0.1
+
+# Data analysis and visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+pandas>=2.0.0
+numpy>=1.24.0
+plotly>=5.15.0
+
+# Web framework for dashboard
+flask>=2.3.0
+flask-cors>=4.0.0
+
+# Database support
+sqlalchemy>=2.0.0
+
+# Configuration and utilities
+pyyaml>=6.0
+click>=8.1.0
+rich>=13.0.0
+tqdm>=4.65.0
+
+# Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+
+# Code quality
+black>=23.0.0
+flake8>=6.0.0
+mypy>=1.5.0
+
+# PDF generation
+reportlab>=4.0.0
+weasyprint>=60.0
+
+# API and networking
+requests>=2.31.0
+aiohttp>=3.8.0
+
+# Date and time handling
+python-dateutil>=2.8.0
+pytz>=2023.3
+
